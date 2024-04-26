@@ -1,7 +1,11 @@
+import { useLoaderData } from "react-router-dom";
+import Banner from "../Sections/Banner";
+
 const Home = () => {
+    const spots = useLoaderData()
     return (
         <div>
-            <h1 className="text-4xl font-bold text-center">This is home</h1>
+            <Banner spots={spots}></Banner>
             <p>hello</p>
         </div>
     );

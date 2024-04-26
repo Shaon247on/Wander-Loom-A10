@@ -22,7 +22,9 @@ const router = createBrowserRouter([
         children:[
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader:()=> fetch('http://localhost:5000/UpdateTouristsSpots')
+
             },
             {
                 path:'/AllTouristsSpot',
@@ -73,6 +75,9 @@ const router = createBrowserRouter([
                 path:'/SpotDetails/:id',
                 element:<SpotDetails></SpotDetails>,
                 loader:({params})=> fetch(`http://localhost:5000/UpdateTouristsSpots/${params.id}`)
+            },
+            {
+                
             }
         ]
     },
