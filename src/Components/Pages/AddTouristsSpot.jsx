@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Swal from 'sweetalert2'
+import Button from "../Sections/Elements/Button";
 
 const AddTouristsSpot = () => {
 
@@ -41,7 +42,8 @@ const AddTouristsSpot = () => {
         }
         console.log(newSpot)
         //send data to sever
-        fetch('http://localhost:5000/AllTouristsSpots', {
+        
+        fetch('http://localhost:5000/UpdateTouristsSpots', {
             method: 'POST',
             headers: {
                 'content-type': "application/json"
@@ -64,12 +66,12 @@ const AddTouristsSpot = () => {
 
     return (
         <div>
-            <h2 className="text-4xl text-center font-bold">Update a touring place</h2>
+            <h2 className="text-2xl md:text-4xl text-center font-bold">Update a touring place</h2>
             <section className="p-6 dark:bg-gray-100 dark:text-gray-900">
                 <form onSubmit={handleAddSpot} className="container flex flex-col mx-auto space-y-12">
                     <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">
                         <div className="space-y-2 col-span-full lg:col-span-1">
-                            <p className="font-medium">Update Information</p>
+                            <p className="font-semibold">Upload New Tourist Spot</p>
                             <p className="text-xs">Fill up all the requirements and press <span className="font-bold">&ldquo;Submit&ldquo;</span> to upload your Tourist Spot.</p>
                         </div>
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
@@ -127,7 +129,7 @@ const AddTouristsSpot = () => {
                                 <input name="name" type="text" placeholder="Your Name" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
                             </div>
                             <div className="col-span-full">
-                                <button name="location" type="submit" placeholder="Location" className="btn btn-info w-full">Submit</button>
+                                <Button text='Submit'></Button>
                             </div>
                         </div>
                     </fieldset>
