@@ -1,9 +1,10 @@
-const MainRoute = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-};
+import { createBrowserRouter } from "react-router-dom";
 
-export default MainRoute;
+
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <div>Hello world!</div>,
+    },
+]);
+export default router;
