@@ -3,7 +3,7 @@ import Header from '../Sections/Header';
 
 const Root = () => {
     return (
-        <div>
+        <div className=''>
             <Header></Header>
             <Outlet></Outlet>
         </div>

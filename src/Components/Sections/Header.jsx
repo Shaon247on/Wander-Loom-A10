@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Button from "./Elements/Button";
 
 const Header = () => {
 
@@ -54,7 +55,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <Link to='/Login'><Button text='Login' class={'w-24'}></Button></Link>
             </div>
         </div>
     );

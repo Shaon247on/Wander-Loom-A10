@@ -58,7 +58,7 @@ const AllTouristsSpot = () => {
                 ))}
             </div>
             <div onClick={handleShow} className={show == 6 ? 'text-center mb-8' : 'text-center mb-8 hidden'}>
-                <button className="btn">Show All</button>
+                <button className="btn btn-info">Show All</button>
             </div>
         </div>
     );
