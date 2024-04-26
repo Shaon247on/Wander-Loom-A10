@@ -12,6 +12,7 @@ import Indonesia from "../Components/Sections/Indonesia";
 import Malaysia from "../Components/Sections/Malaysia";
 import Vietnam from "../Components/Sections/Vietnam";
 import Cambodia from "../Components/Sections/Cambodia";
+import SpotDetails from "../Components/Sections/SpotDetails";
 
 
 const router = createBrowserRouter([
@@ -68,6 +69,11 @@ const router = createBrowserRouter([
                 path:'/Cambodia',
                 element:<Cambodia></Cambodia>
             },
+            {
+                path:'/SpotDetails/:id',
+                element:<SpotDetails></SpotDetails>,
+                loader:({params})=> fetch(`http://localhost:5000/UpdateTouristsSpots/${params.id}`)
+            }
         ]
     },
 ]);

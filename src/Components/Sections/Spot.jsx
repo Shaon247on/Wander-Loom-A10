@@ -1,15 +1,11 @@
-import { LiaVectorSquareSolid } from "react-icons/lia";
-import { IoHomeOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Button from "./Elements/Button";
 
 const Spot = ({ tourSpot }) => {
-    console.log(tourSpot)
     const { _id, image, spot, cost, visitors, time, seasonality, country } = tourSpot
 
     function extractAverageCost(costString) {
         const costValues = costString.match(/\d+/g).map(Number);
-        console.log(costValues)
         const averageCost = costValues.reduce((acc, val) => acc + val, 0) / costValues.length;
         const formattedAverageCost = `$${averageCost.toFixed(2)}`;
         return formattedAverageCost;
@@ -30,10 +26,10 @@ const Spot = ({ tourSpot }) => {
                     <h2 className="text-2xl font-bold tracking-wide mb-3 font-open">{spot}</h2>
                     <h3 className="text-base font-bold tracking-wide mb-3">Total Tourists Per Year: <br /> {visitors}</h3>
                     <h3 className='text-lg font-semibold'>Duration: {time}</h3>
-                    <h3 className='text-base text-[#231F20]'>Appropiate Season to visit: {seasonality}</h3>
+                    <h3 className='text-base text-[#231F20]'>Appropriate Season to visit: {seasonality}</h3>
                     <p className="dark:text-gray-800 mt-1 flex-grow"><span className='font-semibold'>Description:</span> { }....</p>
                 </div>
-                <Button text='View Property'></Button>
+                <Link to={`/SpotDetails/${_id}`}><Button text='View Property'></Button></Link>
             </div>
 
         </div>
