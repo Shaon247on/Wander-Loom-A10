@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../Firebase/Firebase";
 import { GithubAuthProvider, GoogleAuthProvider, TwitterAuthProvider } from "firebase/auth/cordova";
@@ -63,12 +63,20 @@ const AuthProvider = ({children}) => {
         })
     }
     
+    //logout
+    const logOut = () => {
+        setLoading(true)
+        setUser(null)
+        return signOut(auth)
+    }
+
+    //user management
     useEffect(()=>{
-        const unsubscribe = onAuthStateChanged(auth, (currentUser)=>{
+        const unsubscribe = onAuthStateChanged(auth, (currentUser=>{
             setUser(currentUser)
             setLoading(false)
-        })
-        return()=> {
+        }))
+        return()=> {    
             unsubscribe()
         }
     },[])
@@ -82,7 +90,9 @@ const AuthProvider = ({children}) => {
         twitterLogin,
         profileUpdate,
         photoUpdate,
-        nameUpdate
+        nameUpdate,
+        logOut,
+        loading
     }
 
     return (
