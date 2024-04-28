@@ -33,7 +33,7 @@ const SpotDetails = () => {
                             <p>{season.toUpperCase()}</p>
                         </div>
                     </div>
-                    <Button text={'Booking'}></Button>
+                    <Button text={'Booking'} style='w-32'></Button>
                 </div>
             </div>
         </div>

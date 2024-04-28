@@ -1,9 +1,24 @@
 import { Link } from "react-router-dom";
 import Button from "./Elements/Button";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Header = () => {
 
+    const { logOut, user, loading, setLoading } = useContext(AuthContext)
+    console.log(user)
+    const handleSignOut = async () => {
+        setLoading(false)
+        try {
+          await logOut();
+          console.log(user.displayName)
+        } catch (error) {
+          console.error("Error signing out:", error.message);
+        }
+      };
 
+
+    
     return (
         <div className="navbar bg-base-100 px-20">
             <div className="navbar-start">
@@ -55,7 +70,17 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/Login'><Button text='Login' style={'w-28'}></Button></Link>
+                {   
+                    user? <div className=" flex items-center gap-6" >
+                    <img src={user.photoURL} alt="" className="w-[38px] md:w-[44px] h-[38px] md:h-[44px] avatar object-cover  rounded-full tooltip tooltip-bottom" data-tip={user?.displayName} />
+                    <Link to='/Login' ><button className="btn btn-info" onClick={handleSignOut}>Sign Out</button></Link>
+                  </div>:
+                  <>
+                  
+                    <Link to='/Login'><Button text='Login' style={'w-32'}></Button></Link>
+                  </>                
+                }
+                
             </div>
         </div>
     );

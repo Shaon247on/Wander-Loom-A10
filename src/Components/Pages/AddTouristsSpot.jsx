@@ -129,7 +129,7 @@ const AddTouristsSpot = () => {
                                 <input name="name" type="text" placeholder="Your Name" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
                             </div>
                             <div className="col-span-full">
-                                <Button text='Submit'></Button>
+                                <Button text='Submit' style='w-full'></Button>
                             </div>
                         </div>
                     </fieldset>

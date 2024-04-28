@@ -41,7 +41,7 @@ const Banner = ({ spots }) => {
                                     <p className='text-2xl font-semibold font'><span className='font-bold font-open'>Area:</span><span className='text-[#00B5FF]'>{spot.cost}</span></p>
                                     <p className='text-2xl font-semibold font'><span className='font-bold font-open'>Appropriate season to visit: </span><span className='text-[#00B5FF]'>{spot.seasonality}</span></p>
                                 </div>
-                                <Link to={`/SpotDetails/${spot._id}`}><Button text={'View Details'} style={'w-32 mt-7'}></Button></Link>
+                                <Link to={`/SpotDetails/${spot._id}`}><Button text={'View Details'} style={'w-[200px] mt-7'}></Button></Link>
                             </div>
                         </div>
                     </SwiperSlide>
