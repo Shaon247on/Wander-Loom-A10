@@ -2,10 +2,12 @@ import { GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, sig
 import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import auth from "../Firebase/Firebase";
+import { TwitterAuthProvider } from "firebase/auth/cordova";
 
 
 export const AuthContext = new createContext(null)
 const googleProvider = new GoogleAuthProvider()
+const twitterProvider = new TwitterAuthProvider();
 
 
 const AuthProvider = ({ children }) => {
@@ -20,12 +22,11 @@ const AuthProvider = ({ children }) => {
     const googleLogin = () => {
         return signInWithPopup(auth, googleProvider)
     }
-    // const githubLogin = () => {
-    //     return signInWithPopup(auth, githubProvider)
-    // }
-    // const twitterLogin = () => {
-    //     return signInWithPopup(auth, twitterProvider)
-    // }
+    
+    const twitterLogin = () => {
+        return signInWithPopup(auth, twitterProvider)
+        
+    }
 
     const profileUpdate = (name, photo) => {
         setLoading(true)
@@ -41,8 +42,7 @@ const AuthProvider = ({ children }) => {
             photoURL: photo
         })
     }
-    const nameUpdate = (name) => {
-        // setLoading(true)
+    const nameUpdate = (name) => {        
         window.location.reload()
         return updateProfile(auth.currentUser, {
             displayName: name
@@ -83,7 +83,8 @@ const AuthProvider = ({ children }) => {
         googleLogin,        
         photoUpdate,
         nameUpdate,
-        setLoading
+        setLoading,
+        twitterLogin
     }
 
     return (
