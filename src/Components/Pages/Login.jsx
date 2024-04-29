@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form"
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
-import { FaRegEye,FaRegEyeSlash } from "react-icons/fa";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import SocialLogin from '../Sections/SocialLogin';
 
 
@@ -42,16 +42,16 @@ const Login = () => {
 
         //     })
         await loginAuth(email, password)
-        .then(result =>{
-            console.log(result.user)
-            const notify = () => toast.success('Successfully logged in');
-                 notify()
-                 navigate(location?.state ? location.state : '/')
-        })
-        .catch(error =>{
-            console.error(error)
-        })
-        
+            .then(result => {
+                console.log(result.user)
+                const notify = () => toast.success('Successfully logged in');
+                notify()
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                console.error(error)
+            })
+
     }
 
     return (
@@ -66,7 +66,7 @@ const Login = () => {
                 reverseOrder={true}
             />
             <div className="text-center mt-[80px] lg:mt-[23px]">
-                <p className="animate__animated animate__backInDown animate__fast text-3xl md:text-5xl font-bold text-[#AD974F]">Login Now</p>
+                <p className="animate__animated animate__backInDown animate__fast text-3xl md:text-5xl font-bold text-[#00B5FF]">Login Now</p>
             </div>
             <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row h-[690px] md:h-[900px] lg:h-[550px] mx-auto bg-base-200 items-center gap-2 mt-[23px] rounded-none md:rounded-xl lg:rounded-xl overflow-hidden px-7 justify-end md:justify-center lg:justify-between p-0 md:p-5 lg:p-5">
                 <div className="shrink-0 w-[80%] md:w-3/4 lg:w-1/2  lg:h-[400px] bg-base-100 md:px-0 lg:px-10 relative">
@@ -124,7 +124,7 @@ const Login = () => {
                 <div className="w-[86%] lg:w-[2px] h-[2px] lg:h-full bg-[#26262633] mb-7 lg:mb-0">
                 </div>
                 <div className="lg:h-full flex ">
-                    <img src="https://i.ibb.co/Bww2zfy/undraw-Login-re-4vu2-1.png" alt="" className="  my-auto w-[600px] h-[200px] md:h-[350px] lg:h-[350px]" />
+                    <img src="https://i.pinimg.com/564x/15/47/c1/1547c11ae29089c573614ed932e8cf4a.jpg" alt="" className="  my-auto w-[600px] h-[200px] md:h-[350px] lg:h-[350px]" />
                 </div>
             </div>
         </div>

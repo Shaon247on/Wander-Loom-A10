@@ -39,11 +39,11 @@ const AllTouristsSpot = () => {
     return (
         <div className="mt-10 mx-2 md:mx-10">
             <div className="text-center space-y-3">
-                <h2 className="text-4xl">All Tourists Places</h2>
-                <p>Embark on a virtual journey to stunning destinations worldwide. <br /> Explore diverse landscapes, rich cultures, and iconic landmarks on our Touring Places page.</p>
+                <h2 className="text-5xl font-bold text-[#00B5FF] mb-2">All Tourists Places</h2>
+                <p className="font-medium text-gray-600/80">Embark on a virtual journey to stunning destinations worldwide. <br /> Explore diverse landscapes, rich cultures, and iconic landmarks on our Touring Places page.</p>
             </div>
             <div className="mt-7 flex justify-center gap-2">
-                <h2 className="text-lg font-semibold">Select Sort:</h2>
+                <h2 className="text-lg font-semibold text-[#00B5FF]">Select Sort:</h2>
                 <select className="border-2 border-black rounded-md" id="selector" value={sortBy} onChange={handleSortByChange}>
                     <option value="option1">Select One</option>
                     <option value="Average-Cost">Average Cost</option>
@@ -58,7 +58,7 @@ const AllTouristsSpot = () => {
                 ))}
             </div>
             <div onClick={handleShow} className={show == 6 ? 'text-center mb-8' : 'text-center mb-8 hidden'}>
-                <button className="btn btn-info">Show All</button>
+                <button className="btn btn-info mt-9">Show All</button>
             </div>
         </div>
     );

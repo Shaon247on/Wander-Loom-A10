@@ -143,7 +143,7 @@ const Register = () => {
                 <div className="w-[86%] lg:w-[2px] h-[2px] lg:h-full bg-[#26262633] mb-7 lg:mb-0">
                 </div>
                 <div className="lg:h-[400px] ">
-                    <img src="https://i.pinimg.com/564x/9b/6e/c1/9b6ec1c5a6886a5395399cdbecc2ef29.jpg" alt="" className="w-[200px] md:w-[400px] lg:w-[600px] h-[200px] md:h-[350px] lg:h-[450px] my-auto lg:my-0 rounded-md mx-auto" />
+                    <img src="https://i.pinimg.com/564x/0c/9b/89/0c9b89b62ba04b4b4740f4ce2da28b54.jpg" alt="" className="w-[200px] md:w-[400px] lg:w-[600px] h-[200px] md:h-[350px] lg:h-[450px] my-auto lg:my-0 rounded-md mx-auto" />
                 </div>
             </div>
         </div>

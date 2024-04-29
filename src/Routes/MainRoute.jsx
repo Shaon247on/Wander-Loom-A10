@@ -25,7 +25,6 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 loader:()=> fetch('http://localhost:5000/UpdateTouristsSpots')
-
             },
             {
                 path:'/AllTouristsSpot',
@@ -34,11 +33,13 @@ const router = createBrowserRouter([
             },
             {
                 path:'/AddTouristsSpot',
-                element:<PrivateRoute><AddTouristsSpot></AddTouristsSpot></PrivateRoute>
+                element:<PrivateRoute><AddTouristsSpot></AddTouristsSpot></PrivateRoute>,
+                
             },
             {
                 path:'/MyList',
-                element:<PrivateRoute><MyList></MyList></PrivateRoute>
+                element:<PrivateRoute><MyList></MyList></PrivateRoute>,
+                loader:()=> fetch('http://localhost:5000/UpdateTouristsSpots')
             },
             {
                 path: '/Register',
@@ -50,27 +51,33 @@ const router = createBrowserRouter([
             },
             {
                 path:'/Bangladesh',
-                element:<PrivateRoute><Bangladesh></Bangladesh></PrivateRoute>
+                element:<PrivateRoute><Bangladesh></Bangladesh></PrivateRoute>,
+                loader:()=> fetch('http://localhost:5000/UpdateTouristsSpots')
             },
             {
                 path:'/Thailand',
-                element:<PrivateRoute><Thailand></Thailand></PrivateRoute>
+                element:<PrivateRoute><Thailand></Thailand></PrivateRoute>,
+                loader:()=> fetch('http://localhost:5000/UpdateTouristsSpots')
             },
             {
                 path:'/Indonesia',
-                element:<PrivateRoute><Indonesia></Indonesia></PrivateRoute>
+                element:<PrivateRoute><Indonesia></Indonesia></PrivateRoute>,
+                loader:()=> fetch('http://localhost:5000/UpdateTouristsSpots')
             },
             {
                 path:'/Malaysia',
-                element:<PrivateRoute><Malaysia></Malaysia></PrivateRoute>
+                element:<PrivateRoute><Malaysia></Malaysia></PrivateRoute>,
+                loader:()=> fetch('http://localhost:5000/UpdateTouristsSpots')
             },
             {
                 path:'/Vietnam',
-                element:<PrivateRoute><Vietnam></Vietnam></PrivateRoute>
+                element:<PrivateRoute><Vietnam></Vietnam></PrivateRoute>,
+                loader:()=> fetch('http://localhost:5000/UpdateTouristsSpots')
             },
             {
                 path:'/Cambodia',
-                element:<PrivateRoute><Cambodia></Cambodia></PrivateRoute>
+                element:<PrivateRoute><Cambodia></Cambodia></PrivateRoute>,
+                loader:()=> fetch('http://localhost:5000/UpdateTouristsSpots')
             },
             {
                 path:'/SpotDetails/:id',

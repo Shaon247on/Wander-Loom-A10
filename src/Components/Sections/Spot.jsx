@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Button from "./Elements/Button";
 
 const Spot = ({ tourSpot }) => {
-    const { _id, image, spot, cost, visitors, time, seasonality, country } = tourSpot
+    const { _id, image, spot, cost, visitors, time, seasonality, country, description } = tourSpot
 
     function extractAverageCost(costString) {
         const costValues = costString.match(/\d+/g).map(Number);
@@ -27,9 +27,9 @@ const Spot = ({ tourSpot }) => {
                     <h3 className="text-base font-bold tracking-wide mb-3">Total Tourists Per Year: <br /> {visitors}</h3>
                     <h3 className='text-lg font-semibold'>Duration: {time}</h3>
                     <h3 className='text-base text-[#231F20]'>Appropriate Season to visit: {seasonality}</h3>
-                    <p className="dark:text-gray-800 mt-1 flex-grow"><span className='font-semibold'>Description:</span> { }....</p>
+                    <p className="dark:text-gray-800 mt-1 flex-grow"><span className='font-semibold'>Description:</span> {tourSpot?.description.slice(0,110)}....</p>
                 </div>
-                <Link to={`/SpotDetails/${_id}`}><Button text='View Property'></Button></Link>
+                <Link to={`/SpotDetails/${_id}`}><Button text='View Property' style='w-40'></Button></Link>
             </div>
 
         </div>
