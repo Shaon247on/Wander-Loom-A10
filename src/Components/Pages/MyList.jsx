@@ -12,7 +12,8 @@ const MyList = () => {
         <div>
             <div></div>
             <div className="container p-2 mx-auto sm:p-4 dark:text-gray-800">
-            <h2 className="mb-4 text-2xl font-semibold leading-tight">Invoices</h2>
+            <h2 className="mb-4 text-2xl font-semibold leading-tight">Added {loggedInUser.length == 1? 'Spot': 'Spots'} by: {loggedInUser[0].name}</h2>
+            <h2 className="mb-4 font-semibold leading-tight">User Email: <span className="font-medium">{loggedInUser[0].email}</span></h2>
             <div className="overflow-x-auto">
                 <table className="min-w-full text-xs">
                     <colgroup>
@@ -27,9 +28,9 @@ const MyList = () => {
                         <tr className="text-left">
                             <th className="p-3">No.</th>
                             <th className="p-3">ID</th>
-                            <th className="p-3">Client</th>
-                            <th className="p-3">Issued</th>
-                            <th className="p-3">Due</th>
+                            <th className="p-3">Spots Name</th>
+                            <th className="p-3">Country</th>
+                            <th className="p-3">Average Cost</th>
                             <th className="p-3 text-center">Update</th>
                             <th className="p-3 text-center">Delete</th>
                         </tr>

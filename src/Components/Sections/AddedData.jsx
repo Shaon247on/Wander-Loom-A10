@@ -3,7 +3,7 @@ const AddedData = ({ addedSpot, index }) => {
 
     const indexLength = index + 1
     console.log(addedSpot, index, indexLength)
-    const {spot, country} = addedSpot
+    const {spot, country, cost} = addedSpot
     return (
         <tr className="border-b border-opacity-20 dark:border-gray-300 dark:bg-gray-50">
             <td className="p-3">
@@ -19,8 +19,7 @@ const AddedData = ({ addedSpot, index }) => {
                 <p>{country}</p>
             </td>
             <td className="p-3">
-                <p>01 Feb 2022</p>
-                <p className="dark:text-gray-600">Tuesday</p>
+                <p>{cost}</p>
             </td>
             <td className="p-3 text-center">
                 <button className="btn btn-info">Update</button>
