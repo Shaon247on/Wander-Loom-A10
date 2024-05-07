@@ -39,6 +39,7 @@ const AddedData = ({ addedSpot, index }) => {
             <td className="p-3 text-center">
                 <span className="px-3 py-1 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">
                     <button onClick={()=>handleDelete(_id)} className="btn btn-warning">Delete</button>
+                    
                 </span>
             </td>
         </tr>
