@@ -14,6 +14,7 @@ import Vietnam from "../Components/Sections/Vietnam";
 import Cambodia from "../Components/Sections/Cambodia";
 import SpotDetails from "../Components/Sections/SpotDetails";
 import PrivateRoute from "./PrivateRoute";
+import ContactUs from "../Components/Pages/ContactUs";
 
 
 const router = createBrowserRouter([
@@ -85,7 +86,8 @@ const router = createBrowserRouter([
                 loader:({params})=> fetch(`https://touring-site-server.vercel.app/UpdateTouristsSpots/${params.id}`)
             },
             {
-                
+              path: '/contactus',
+              element: <ContactUs></ContactUs>  
             }
         ]
     },

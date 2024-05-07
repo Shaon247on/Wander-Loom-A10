@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Swal from 'sweetalert2'
 import Button from "../Sections/Elements/Button";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const AddTouristsSpot = () => {
 
-
+    const {user} = useContext(AuthContext)
     const [country, setCountry] = useState('');
     console.log(country)
 
@@ -77,7 +78,7 @@ const AddTouristsSpot = () => {
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                             <div className="col-span-full flex flex-col items-start gap-2">
                                 <label className="text-sm">Select Country</label>
-                                <select value={country} onChange={handleChange}>
+                                <select value={country} onChange={handleChange} required>
                                     <option >Select One</option>
                                     <option value="Bangladesh">Bangladesh</option>
                                     <option value="Thailand">Thailand</option>
@@ -89,32 +90,32 @@ const AddTouristsSpot = () => {
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label className="text-sm">Tourist Spot Name</label>
-                                <input name="spot" type="text" placeholder="Tourist Spot Name" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+                                <input name="spot" type="text" placeholder="Tourist Spot Name" required className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
 
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label className="text-sm">Average Cost</label>
-                                <input name="cost" type="text" placeholder="Average Cost" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+                                <input name="cost" type="text" placeholder="Average Cost" required className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label className="text-sm">Seasonality</label>
-                                <input name="seasonality" type="text" placeholder="Seasonality" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+                                <input name="seasonality" type="text" placeholder="Seasonality" required className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label className="text-sm">Travel Time</label>
-                                <input name="time" type="text" placeholder="Travel Time" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+                                <input name="time" type="text" placeholder="Travel Time" required className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
                             </div>
                             <div className="col-span-full">
                                 <label className="text-sm">Location</label>
-                                <input name="location" type="text" placeholder="Location" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+                                <input name="location" type="text" required placeholder="Location" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
                             </div>
                             <div className="col-span-full">
                                 <label className="text-sm">Short Description</label>
-                                <input name="description" type="text" placeholder="Short Description" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+                                <input name="description" type="text" required placeholder="Short Description" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
                             </div>
                             <div className="col-span-full">
                                 <label className="text-sm">Image URL</label>
-                                <input name="image" type="text" placeholder="Image URL" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+                                <input name="image" required type="text" placeholder="Image URL" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
                             </div>
                             <div className="col-span-full sm:col-span-2">
                                 <label className="text-sm">Total Visitors Per Year</label>
@@ -122,11 +123,11 @@ const AddTouristsSpot = () => {
                             </div>
                             <div className="col-span-full sm:col-span-2">
                                 <label className="text-sm">Your Email</label>
-                                <input name="email" type="text" placeholder="Your Email" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+                                <input name="email" type="text" defaultValue={user?.email} disabled className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
                             </div>
                             <div className="col-span-full sm:col-span-2">
                                 <label className="text-sm">Your Name</label>
-                                <input name="name" type="text" placeholder="Your Name" className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+                                <input name="name" type="text" defaultValue={user?.displayName} disabled className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
                             </div>
                             <div className="col-span-full">
                                 <Button text='Submit' style='w-full'></Button>

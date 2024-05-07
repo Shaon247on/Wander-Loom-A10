@@ -5,15 +5,17 @@ import AddedData from "../Sections/AddedData";
 
 const MyList = () => {
     const spots = useLoaderData()
+    console.log(spots)
     const { user } = useContext(AuthContext)
+    console.log(user.email)
     const loggedInUser = spots.filter(spot => spot.email.toLowerCase() === user.email)
     console.log(loggedInUser)
     return (
         <div>
             <div></div>
             <div className="container p-2 mx-auto sm:p-4 dark:text-gray-800">
-            <h2 className="mb-4 text-2xl font-semibold leading-tight">Added {loggedInUser.length == 1? 'Spot': 'Spots'} by: {loggedInUser[0].name}</h2>
-            <h2 className="mb-4 font-semibold leading-tight">User Email: <span className="font-medium">{loggedInUser[0].email}</span></h2>
+            <h2 className="mb-4 text-2xl font-semibold leading-tight">Added {loggedInUser.length == 1? 'Spot': 'Spots'} by: {loggedInUser[0]?.name}</h2>
+            <h2 className="mb-4 font-semibold leading-tight">User Email: <span className="font-medium">{loggedInUser[0]?.email}</span></h2>
             <div className="overflow-x-auto">
                 <table className="min-w-full text-xs">
                     <colgroup>

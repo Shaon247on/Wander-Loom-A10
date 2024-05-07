@@ -43,11 +43,14 @@ const Header = () => {
                             </details>
                         </li>
                         <li><><Link to='/AddTouristsSpot'>Add Tourists Spot</Link></></li>
-                        <li><><Link to='/MyList'>My List</Link></></li>
+                        {user && <>
+                            <li><><Link to='/MyList'>My List</Link></></li>
+                        </>}
+                        <li><><Link to='/contactus'>Contact Us</Link></></li>
                         <li><><Link to='/Register'>Register</Link></></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <Link to='/' className="btn btn-ghost text-xl">Wander<span className="text-blue-500">Loom</span></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -67,7 +70,10 @@ const Header = () => {
                         </details>
                     </li>
                     <li><><Link to='/AddTouristsSpot'>Add Tourists Spot</Link></></li>
-                    <li><><Link to='/MyList'>My List</Link></></li>
+                    {user && <>
+                        <li><><Link to='/MyList'>My List</Link></></li>
+                    </>}
+                    <li><><Link to='/contactus'>Contact Us</Link></></li>
                     <li><><Link to='/Register'>Register</Link></></li>
                 </ul>
             </div>
