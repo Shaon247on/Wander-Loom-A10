@@ -24,12 +24,12 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader:()=> fetch('http://localhost:5000/UpdateTouristsSpots')
+                loader:()=> fetch('https://touring-site-server.vercel.app/UpdateTouristsSpots')
             },
             {
                 path:'/AllTouristsSpot',
                 element:<PrivateRoute><AllTouristsSpot></AllTouristsSpot></PrivateRoute>,
-                loader:()=> fetch('http://localhost:5000/UpdateTouristsSpots')
+                loader:()=> fetch('https://touring-site-server.vercel.app/UpdateTouristsSpots')
             },
             {
                 path:'/AddTouristsSpot',
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
             {
                 path:'/MyList',
                 element:<PrivateRoute><MyList></MyList></PrivateRoute>,
-                loader:()=> fetch('http://localhost:5000/UpdateTouristsSpots')
+                loader:()=> fetch('https://touring-site-server.vercel.app/UpdateTouristsSpots')
             },
             {
                 path: '/Register',
@@ -52,37 +52,37 @@ const router = createBrowserRouter([
             {
                 path:'/Bangladesh',
                 element:<PrivateRoute><Bangladesh></Bangladesh></PrivateRoute>,
-                loader:()=> fetch('http://localhost:5000/UpdateTouristsSpots')
+                loader:()=> fetch('https://touring-site-server.vercel.app/UpdateTouristsSpots')
             },
             {
                 path:'/Thailand',
                 element:<PrivateRoute><Thailand></Thailand></PrivateRoute>,
-                loader:()=> fetch('http://localhost:5000/UpdateTouristsSpots')
+                loader:()=> fetch('https://touring-site-server.vercel.app/UpdateTouristsSpots')
             },
             {
                 path:'/Indonesia',
                 element:<PrivateRoute><Indonesia></Indonesia></PrivateRoute>,
-                loader:()=> fetch('http://localhost:5000/UpdateTouristsSpots')
+                loader:()=> fetch('https://touring-site-server.vercel.app/UpdateTouristsSpots')
             },
             {
                 path:'/Malaysia',
                 element:<PrivateRoute><Malaysia></Malaysia></PrivateRoute>,
-                loader:()=> fetch('http://localhost:5000/UpdateTouristsSpots')
+                loader:()=> fetch('https://touring-site-server.vercel.app/UpdateTouristsSpots')
             },
             {
                 path:'/Vietnam',
                 element:<PrivateRoute><Vietnam></Vietnam></PrivateRoute>,
-                loader:()=> fetch('http://localhost:5000/UpdateTouristsSpots')
+                loader:()=> fetch('https://touring-site-server.vercel.app/UpdateTouristsSpots')
             },
             {
                 path:'/Cambodia',
                 element:<PrivateRoute><Cambodia></Cambodia></PrivateRoute>,
-                loader:()=> fetch('http://localhost:5000/UpdateTouristsSpots')
+                loader:()=> fetch('https://touring-site-server.vercel.app/UpdateTouristsSpots')
             },
             {
                 path:'/SpotDetails/:id',
                 element:<PrivateRoute><SpotDetails></SpotDetails></PrivateRoute>,
-                loader:({params})=> fetch(`http://localhost:5000/UpdateTouristsSpots/${params.id}`)
+                loader:({params})=> fetch(`https://touring-site-server.vercel.app/UpdateTouristsSpots/${params.id}`)
             },
             {
                 

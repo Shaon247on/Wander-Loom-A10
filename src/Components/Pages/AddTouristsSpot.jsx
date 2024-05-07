@@ -43,7 +43,7 @@ const AddTouristsSpot = () => {
         console.log(newSpot)
         //send data to sever
         
-        fetch('http://localhost:5000/UpdateTouristsSpots', {
+        fetch('https://touring-site-server.vercel.app/UpdateTouristsSpots', {
             method: 'POST',
             headers: {
                 'content-type': "application/json"
